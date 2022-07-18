@@ -123,4 +123,18 @@ public class MainActivity extends AppCompatActivity {
         pipeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, pipeTypes);
         spPipe.setAdapter(pipeAdapter);
     }
+
+    @Override
+    public void onYesListenterMethod(DialogFragment dialog){
+        EditText etPrev = findViewById(R.id.etPrev);
+        int prey = Integer.parseInt(etPrev.getText().toString());
+        int read = prev + last_consumption;
+        EditText etNext = findViewById(R.id.etNew);
+        etNext.setText(read + "");
+    }
+
+    @Override
+    public void onNoListenerMethod(DialogFragment dialog){
+
+    }
 }
