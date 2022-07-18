@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
     // TODO Milestone B: Show History.
     private void setHistoryAdapter() {
-
+        ListView lvHistory = findViewById()
     }
 
     // // TODO Milestone 3: Calculate bill.
