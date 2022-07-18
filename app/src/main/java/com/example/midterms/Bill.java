@@ -17,6 +17,8 @@ public class Bill {
 
     // TODO Milestone 3: Calculate bill.
     public double get_bill() {
+
+
         return 0;
     }
 }
