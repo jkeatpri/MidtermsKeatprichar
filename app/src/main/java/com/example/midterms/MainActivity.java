@@ -51,7 +51,38 @@ public class MainActivity extends AppCompatActivity {
 
     // // TODO Milestone 3: Calculate bill.
     private void btnCalculateListenerMethod() {
-
+        Button btnCalculate = findViewById(R.id.btnCalculate);
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText etPrev = findViewById(R.id.etPrev);
+                int prev = Integer.parseInt(etPrev.getText().toString());
+                EditText etNext = findViewById(R.id.etNew);
+                int curr = Integer.parseInt(etNext.getText().toString());
+                Spinner spPipe = findViewById(R.id.spPipe);
+                Pipe type = (Pipe) spPipe.getSelectedItem();
+                RadioButton rbBasic = findViewById(R.id.rbBasic);
+                RadioButton rbRegular = findViewById(R.id.rbRegular);
+                RadioButton rbPremium = findViewById(R.id.rbPremium);
+                int pack = 0;
+                if(rbBasic.isChecked()){
+                    pack = 1;
+                }
+                else if(rbRegular.isChecked()){
+                    pack = 2;
+                }
+                else{
+                    pack = 3;
+                }
+                Bill new_bill = new Bill(prev, curr, type, pack, month);
+                month++;
+                double bill = new_bill.get_bill();
+                EditText etResult = findViewById(R.id.etResult);
+                etResult.setText(bill + "");
+                etPrev.setText(curr + "");
+                etNext.setText("");
+            }
+        });
     }
 
     /**
