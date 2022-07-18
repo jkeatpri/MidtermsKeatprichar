@@ -41,7 +41,31 @@ public class MainActivity extends AppCompatActivity {
 
     // TODO Milestone A: Use Day-Night mode.
     private void nightModeListenerMethod() {
+        Switch swNight = findViewById(R.id.swNight);
+        swNight.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                int[] textViews = {R.id.swNight}
+                        ConstraintLayout clMain = findViewById(R.id.clMain);
+                if(swNight.isChecked()){
+                    clMain.setBackgroundColor(Color.BLACK);
+                    tvPipe.setTextColor(Color.WHITE)
+                    for(int res: textviews){
+                        TextView view1 = findViewById(res);
+                        view1.setTextColor.(Color.WHITE);
+                    }
+                }
+                else{
+                    clMain.setBackgroundColor((Color.WHITE);
+                    tvPipe.setTextColor(Color.BLACK);
+                    for(int res : textviews)
+                        TextView view1 = findViewById(res);
+                    view1.setTextColor(Color.BLACK);
 
+                        );
+                }
+            }
+        });
     }
 
     // TODO Milestone B: Show History.
